@@ -54,12 +54,12 @@ a {
   height: 50px;
   color: #ffffff;
   border: none;
+  margin-top: 1px;
 }
 
 .rules {
   background-color: #1fcca4;
   font-size: 1em;
-  margin-bottom: 1px;
 }
 
 .rules:hover {
