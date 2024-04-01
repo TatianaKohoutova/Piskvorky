@@ -1,4 +1,5 @@
-.title {
+.title,
+.hra_content--title {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -6,7 +7,8 @@
   color: #ffffff;
 }
 
-.text {
+.text,
+p {
   font-family: sans-serif;
   color: #ffffff;
   margin: 0px 30px 40px 30px;
@@ -22,14 +24,20 @@ body {
 body {
   height: 100%;
   background: linear-gradient(#615dad, #ffc8da);
+  background-attachment: fixed;
   align-items: center;
   display: flex;
   justify-content: center;
+  /* margin: 0;
+  border: 0; */
+
 }
 
 .opening {
   top: 50px;
   max-width: 400px;
+  margin: 60px;
+  align-self: start;
 }
 
 .content {
@@ -45,7 +53,7 @@ body {
   max-width: 100%;
   height: 100%;
   display: block;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 button,
@@ -73,4 +81,105 @@ a {
 
 .begin:hover {
   background-color: #0090e9;
+}
+
+.hra {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-self: start;
+  align-items: center;
+  max-width: 80vmin;
+  justify-content: space-between;
+}
+
+.hracipole,
+.pole {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hra_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.hra_content--subtitle,
+.subtitle-tlacitka {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.subtitle p {
+  margin: 5px;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1.3em;
+}
+
+.hra_content--title {
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 4em;
+}
+
+
+.subtitle-tlacitka a {
+  display: flex;
+  /* margin-bottom: 20px; */
+  /* margin: 5px; */
+}
+
+.domu button {
+  width: 50px;
+  height: 50px;
+  background-color: #1fcca4;
+  background-image: url('images/home.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.domu button:hover {
+  background-color: #1cbb96;
+}
+
+.znovu button {
+  width: 50px;
+  height: 50px;
+  background-color: #0197f6;
+  background-image: url('images/restart.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.znovu button:hover {
+  background-color: #0090e9;
+}
+
+
+.hracipole {
+  max-width: 80vmin;
+}
+
+.pole {
+  max-width: 8vw;
+  max-height: 8vw;
+  aspect-ratio: 1/1;
+  border: 1px solid #283e50;
+  margin-top: 0;
+  padding: 0;
+  opacity: 0.5;
 }
