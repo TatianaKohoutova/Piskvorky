@@ -5,13 +5,14 @@
   font-style: normal;
   font-size: 3em;
   color: #ffffff;
+  margin: 20px 0px 20px 0px;
 }
 
 .text,
 p {
   font-family: sans-serif;
   color: #ffffff;
-  margin: 0px 30px 40px 30px;
+  margin: 0px 30px 20px 30px;
   text-align: center;
   line-height: 1.5;
 }
@@ -28,15 +29,14 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  /* margin: 0;
-  border: 0; */
-
+  margin-bottom: 20px;
+  border: 0;
 }
 
 .opening {
   top: 50px;
   max-width: 400px;
-  margin: 60px;
+  margin: 40px;
   align-self: start;
 }
 
@@ -46,6 +46,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 
@@ -92,7 +93,8 @@ a {
   max-width: 80vmin;
   /* justify-content: space-between; */
   height: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+  /* margin-bottom: 40px; */
 }
 
 .hracipole,
@@ -130,6 +132,7 @@ a {
   /* margin-top: 60px; */
   text-align: center;
   font-size: 4em;
+  margin: 10px 0px 10px 0px;
 }
 
 
@@ -186,3 +189,61 @@ a {
   padding: 0;
   opacity: 0.5;
 }
+
+.pole:hover,
+.pole:focus {
+  opacity: 0.6
+}
+
+.board__field--circle {
+  background-image: url('images/circleblack.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  opacity: 0.6;
+
+  /* animation-duration: 0.15s; */
+  /* animation: scale 2000ms ease-in-out forwards;
+  transition: width 2s ease-in-out; */
+  transition: scale 300ms;
+}
+
+.board__field--cross {
+  background-image: url('images/crossblack.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  opacity: 0.6
+}
+
+button:disabled {
+  background-color: white;
+  opacity: 0.5;
+
+}
+
+/* Cílem bude, aby klikáním na políčka se v nich objevovaly kolečka a křížky a v levé části nad herní plochou se zobrazovala informace o tom, kdo je na tahu.
+
+Nachystej si dvě CSS třídy (například board__field--circle a board__field--cross), které políčko dostylují tak, aby se na něm zobrazilo kolečko nebo křížek. Neboj se třídy otestovat tak, že je na zkoušku přidáš tlačítkům přímo v HTML. Po testu je ale z HTML nezapomeň smazat, protože tyto třídy bude přidávat a odebírat pouze javascript.
+
+V javascriptu si nachystej proměnnou, která bude obsahovat informaci o tom, kdo je na tahu. Například let currentPlayer = 'circle', protože hru začíná kolečko. let je potřeba proto, protože kdo je zrovna na tahu se bude v průběhu hry měnit.
+
+Další kroky dělej až po sobotní lekci.
+
+Všem deseti tlačítkům přidej posluchač události na kliknutí.
+
+V selektorech si můžeš pomoct pseudotřídou nth-child. Například document.querySelector('button:nth-child(5)') vybere páté tlačítko (za předpokladu, že prvky <button> mají stejného rodiče). document.querySelector('button:nth-child(6)') vybere šesté, atd. Pokud všechna tlačítka nemají společného rodiče, protože jsou třeba v tabulce, bude potřeba pomocí nth-child() vybrat buňku tabulky a v ní tlačítko – např. document.querySelector('td:nth-child(5) button') vybere pátou buňku tabulky a v ní vybere tlačítko. Vybrat takhle tlačítka v dalších řádcích tabulky by bylo ještě komplikovanější, ale v tom nám v dalších lekcích pomůže JavaScript.
+
+Vytvoř funkci pro posluchač, která políčku, na které uživatel kliknul (event.target), přidá příslušnou třídu. (Pro zjednodušení zkus přidávat nejdříve jen kolečka.)
+
+přidávání koleček
+
+střídání symbolů
+
+S každým kliknutím změň hodnotu proměnné currentPlayer na opačnou. Z circle na cross a naopak.
+
+Podle hotnoty proměnné na stránce uprav znázornění, kdo právě hraje.
+
+úprava, kdo hraje
+
+Zamez, aby uživatel mohl na již zahraná políčka kliknout vícekrát pomocí vlastnosti disabled (event.target.disabled = true). */
