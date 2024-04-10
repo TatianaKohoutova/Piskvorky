@@ -205,7 +205,7 @@ a {
   /* animation-duration: 0.15s; */
   /* animation: scale 2000ms ease-in-out forwards;
   transition: width 2s ease-in-out; */
-  transition: scale 300ms;
+  /* transition: scale 300ms; */
 }
 
 .board__field--cross {
