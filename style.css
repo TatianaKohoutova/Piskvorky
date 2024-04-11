@@ -188,6 +188,7 @@ a {
   margin-top: 0;
   padding: 0;
   opacity: 0.5;
+
 }
 
 .pole:hover,
@@ -195,31 +196,40 @@ a {
   opacity: 0.6
 }
 
+@keyframes enlarge {
+  0% {
+    background-size: 0%;
+  }
+
+  100% {
+    background-size: 80%;
+  }
+}
+
+
 .board__field--circle {
   background-image: url('images/circleblack.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
   opacity: 0.6;
-
-  /* animation-duration: 0.15s; */
-  /* animation: scale 2000ms ease-in-out forwards;
-  transition: width 2s ease-in-out; */
-  /* transition: scale 300ms; */
+  animation: enlarge 0.15s linear;
 }
+
+
 
 .board__field--cross {
   background-image: url('images/crossblack.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
-  opacity: 0.6
+  opacity: 0.6;
+  animation: enlarge 0.15s linear;
 }
 
 button:disabled {
   background-color: white;
   opacity: 0.5;
-
 }
 
 /* Cílem bude, aby klikáním na políčka se v nich objevovaly kolečka a křížky a v levé části nad herní plochou se zobrazovala informace o tom, kdo je na tahu.
