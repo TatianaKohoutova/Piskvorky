@@ -3,7 +3,7 @@ import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 let currentPlayer = 'circle';
 const pole = document.querySelectorAll('.pole');
 
-const chod = (evt) => {
+const chod = async (evt) => {
   const btn = evt.target;
   evt.preventDefault();
   evt.target.disabled = true;
@@ -56,6 +56,31 @@ const chod = (evt) => {
     setTimeout(KrizekIsBest, 160);
   } else if (vyhral === 'tie') {
     setTimeout(noWinners, 160);
+  }
+
+  if (vyhral === null && currentPlayer === 'cross') {
+    console.log('krizek tu!');
+
+    // const fields = document.querySelectorAll('.board__field');
+    // const pole = document.querySelectorAll('.pole');
+
+    const response = await fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: herniPole,
+          player: 'x', // Hledá tah pro křížek.
+        }),
+      },
+    );
+    const data = await response.json();
+    const { x, y } = data.position; // x bude 0 a y bude 1, protože to je jediné volné políčko. x 0 odpovídá prvnímu sloupci a y 1 druhému řádku.
+    const index = pole[x + y * 10]; // Najde políčko na příslušné pozici.
+    index.click(); // Simuluje kliknutí. Spustí událost `click` na políčku.
   }
 
   // console.log(herniPole, findWinner(herniPole));
